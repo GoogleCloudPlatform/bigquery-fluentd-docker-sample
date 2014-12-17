@@ -1,0 +1,38 @@
+[
+  {
+    "name": "agent",
+    "type": "STRING"
+  },
+  {
+    "name": "code",
+    "type": "STRING"
+  },
+  {
+    "name": "host",
+    "type": "STRING"
+  },
+  {
+    "name": "method",
+    "type": "STRING"
+  },
+  {
+    "name": "path",
+    "type": "STRING"
+  },
+  {
+    "name": "referer",
+    "type": "STRING"
+  },
+  {
+    "name": "size",
+    "type": "INTEGER"
+  },
+  {
+    "name": "user",
+    "type": "STRING"
+  },
+  {
+    "name": "time",
+    "type": "INTEGER"
+  }
+]
