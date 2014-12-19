@@ -3,11 +3,9 @@
 #
 # This image will run nginx, fluentd and bigquery plugin to send access log to BigQuery.
 #
-# Usage: $ sudo docker run -e GCP_PROJECT=<<YOUR_PROJECT_ID>> -p 80:80 -t -i -d kazunori279/fluentd-bigquery-sample
-#
 
 FROM ubuntu:12.04
-MAINTAINER kazunori279-at-gmail.com
+MAINTAINER kazsato@google.com
 
 # environment
 ENV DEBIAN_FRONTEND noninteractive
@@ -22,13 +20,16 @@ RUN apt-get -y install sudo
 RUN curl -O http://packages.treasure-data.com/debian/RPM-GPG-KEY-td-agent && apt-key add RPM-GPG-KEY-td-agent && rm RPM-GPG-KEY-td-agent
 RUN curl -L http://toolbelt.treasuredata.com/sh/install-ubuntu-precise-td-agent2.sh | sh 
 ADD td-agent.conf /etc/td-agent/td-agent.conf
+RUN curl -L https://raw.githubusercontent.com/fluent/fluentd/master/COPYING > /fluentd-license.txt
 
 # nginx
 RUN apt-get install -y nginx
 ADD nginx.conf /etc/nginx/nginx.conf
+RUN curl -L http://nginx.org/LICENSE > /nginx-license.txt
 
 # fluent-plugin-bigquery
 RUN /usr/sbin/td-agent-gem install fluent-plugin-bigquery --no-ri --no-rdoc -V
+RUN curl -L https://raw.githubusercontent.com/kaizenplatform/fluent-plugin-bigquery/master/LICENSE.txt > fluent-plugin-bigquery-license.txt
 
 # start fluentd and nginx
 EXPOSE 80
