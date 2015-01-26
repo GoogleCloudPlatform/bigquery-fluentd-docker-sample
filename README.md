@@ -1,6 +1,6 @@
 # Fluentd + Google BigQuery Getting Started Sample
 
-This sample launches and runs a [Docker](https://www.docker.com/) container that's preconfigured with [nginx](http://nginx.org/en/) and [Fluentd](http://www.fluentd.org/) and uses a [Fluentd-to-Bigquery plugin](https://github.com/kaizenplatform/fluent-plugin-bigquery) to load web server access logs into [Google BigQuery](https://cloud.google.com/bigquery/) in near-real-time.
+This sample launches and runs a [Docker](https://www.docker.com/) container that's preconfigured with [nginx](http://nginx.org/en/) and [Fluentd](http://www.fluentd.org/) and uses a [Fluentd-to-BigQuery plugin](https://github.com/kaizenplatform/fluent-plugin-bigquery) to load web server access logs into [Google BigQuery](https://cloud.google.com/bigquery/) in near-real-time.
 
 For a step-by-step tutorial, see: https://cloud.google.com/solutions/real-time/fluentd-bigquery
 
